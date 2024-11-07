@@ -9,6 +9,11 @@ pipeline {
                 sh 'docker login -u ${DOCKER_LOGIN_USR} -p ${DOCKER_LOGIN_PSW}'
             }
         }
+        stage('Jenkins ssh') {
+            steps {
+                sh 'ssh Earl@35.233.72.76 touch test.txt'
+            }
+        }
         stage('SonarQube Analysis') {
             environment {
                 scannerHome = tool 'sonarqube'
