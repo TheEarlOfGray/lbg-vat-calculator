@@ -12,6 +12,7 @@ pipeline {
         stage('Jenkins ssh') {
             steps {
                 sh 'ssh jenkins@35.233.72.76 touch finalfile.txt'
+                sh 'docker run --name thing ubuntu'
             }
         }
         stage('SonarQube Analysis') {
