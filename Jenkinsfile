@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Jenkins ssh') {
             steps {
-                sh 'ssh Earl@35.233.72.76 touch test.txt'
+                sh 'ssh jenkins@35.233.72.76 touch finalfile.txt'
             }
         }
         stage('SonarQube Analysis') {
